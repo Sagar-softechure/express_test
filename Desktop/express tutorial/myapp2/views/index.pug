@@ -3,6 +3,10 @@ extends layout
 block content
   h1= title
   p Welcome to #{title}
-  ul
-    each user in userdata
-      li #{user.name} is #{user.age} years old
+    if userdata && userdata.length
+
+      each user in userdata
+        ul
+          li #{user.name} is #{user.age} years old
+    else
+      p No users found

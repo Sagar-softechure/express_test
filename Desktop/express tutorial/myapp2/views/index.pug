@@ -2,11 +2,10 @@ extends layout
 
 block content
   h1= title
-  p Welcome to #{title}
-    if userdata && userdata.length
-
+  a(href="/users/new") Add New User
+  if userdata && userdata.length
+    ul
       each user in userdata
-        ul
-          li #{user.name} is #{user.age} years old
-    else
-      p No users found
+        li #{user.name} is #{user.age} years old
+  else
+    p No users found

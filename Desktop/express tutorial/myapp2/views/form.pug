@@ -1,0 +1,13 @@
+extends layout
+
+block content
+  h1= title
+  form(action="/users" method="POST")
+    div
+      label(for="name") Name:
+      input(type="text" name="name" required)
+    div
+      label(for="age") Age:
+      input(type="number" name="age" required)
+    div
+      button(type="submit") Add User

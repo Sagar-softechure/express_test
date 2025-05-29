@@ -1,7 +1,7 @@
 // routes/sampleUsers.js
 const express = require('express');
 const router = express.Router();
-const SampleUser = require('../models/SampleUser');
+const SampleUser = require('../models/users');
 
 router.get('/', async (req, res) => {
   try {

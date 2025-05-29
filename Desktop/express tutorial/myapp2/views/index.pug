@@ -6,6 +6,6 @@ block content
   if userdata && userdata.length
     ul
       each user in userdata
-        li #{user.name} is #{user.age} years old
+        li #{user.name} with email id: #{user.email}
   else
     p No users found

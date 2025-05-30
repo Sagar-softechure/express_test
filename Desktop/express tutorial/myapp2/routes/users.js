@@ -2,10 +2,7 @@ const express = require('express');
 const router = express.Router();
 const userStore = require('../models/users');
 
-router.use((req, res, next) => {
-  console.log(`[${req.method}] ${req.originalUrl}`);
-  next();
-});
+
 // GET form to add user
 router.get('/new', (req, res) => {
   res.render('form', { title: 'Add User' });
@@ -130,5 +127,10 @@ router.delete('/:id', async (req, res) => {
     res.status(500).send('Invalid user ID or delete failed.');
   }
 });
+
+app.use((err, req, res, next) => {
+  res.status(500).json({ error: err.message || 'Internal Server Error' });
+});
+
 
 module.exports = router;
